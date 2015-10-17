@@ -1,0 +1,65 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db",
+    "relations":{
+      "submissions":{
+        "type":"hasMany",
+        "model":"Submission",
+        "foreignKey":""
+      }
+    },
+    "acls": [
+      {
+        "accessType":"*",
+        "permission":"ALLOW",
+        "principalType":"ROLE",
+        "principalId":"$owner",
+        "property":"__create__submissions"
+      }, {
+        "accessType":"*",
+        "permission":"ALLOW",
+        "principalType":"ROLE",
+        "principalId":"$owner",
+        "property":"__get__submissions"
+      }
+    ]
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Assignment": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Submission": {
+    "dataSource": "db",
+    "public": false
+  }
+}

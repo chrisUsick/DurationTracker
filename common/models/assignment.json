@@ -1,0 +1,28 @@
+{
+  "name": "Assignment",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "expectedDuration": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "submissions": {
+      "type": "hasMany",
+      "model": "Submission",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
