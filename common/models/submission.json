@@ -25,7 +25,13 @@
     }
   },
   "acls": [
-    
+    {
+        "accessType":"*",
+        "permission":"DENY",
+        "principalType":"ROLE",
+        "principalId":"$everyone",
+        "property":"__create__submissions"
+      }
   ],
   "methods": {}
 }

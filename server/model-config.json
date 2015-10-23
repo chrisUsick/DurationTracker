@@ -60,6 +60,6 @@
   },
   "Submission": {
     "dataSource": "db",
-    "public": false
+    "public": true
   }
 }
